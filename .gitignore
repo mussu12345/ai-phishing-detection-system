@@ -1,0 +1,26 @@
+# Datasets
+backend/*.csv
+
+# Python
+__pycache__/
+*.pyc
+backend/__pycache__/
+backend/services/__pycache__/
+
+# Database
+*.db
+
+# Reports
+*.pdf
+
+# Models
+*.pkl
+backend/saved_models/
+
+# Virtual Environment
+venv/
+.env
+
+# Node
+node_modules/
+dist/
