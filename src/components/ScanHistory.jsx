@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import axios from "axios";
 import { FaHistory } from "react-icons/fa";
 
-const socket = io("http://127.0.0.1:5000");
+const socket = io("https://ai-phishing-detection-system3.onrender.com");
 
 function ScanHistory() {
   const [history, setHistory] = useState([]);
@@ -11,7 +11,7 @@ function ScanHistory() {
   const fetchHistory = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:5000/history"
+        "https://ai-phishing-detection-system3.onrender.com/history"
       );
 
       setHistory(response.data);
@@ -39,7 +39,7 @@ function ScanHistory() {
   const clearHistory = async () => {
     try {
       await axios.delete(
-        "http://127.0.0.1:5000/clear-history"
+        "https://ai-phishing-detection-system3.onrender.com/clear-history"
       );
 
       fetchHistory();
@@ -126,7 +126,7 @@ function ScanHistory() {
           className="export-btn"
           onClick={() =>
             window.open(
-              "http://127.0.0.1:5000/export-history",
+              "https://ai-phishing-detection-system3.onrender.com/export-history",
               "_blank"
             )
           }

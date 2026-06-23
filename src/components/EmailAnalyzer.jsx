@@ -13,7 +13,7 @@ function EmailAnalyzer() {
     setResult(null);
 
     const response = await axios.post(
-      "http://127.0.0.1:5000/analyze-email",
+      "https://ai-phishing-detection-system3.onrender.com/analyze-email",
       {
         email: emailText,
       }
@@ -118,17 +118,17 @@ function EmailAnalyzer() {
   <button
     className="download-btn"
     onClick={async () => {
-      const response = await axios.post(
-        "http://127.0.0.1:5000/download-pdf",
+      const pdfResponse = await axios.post(
+        "https://ai-phishing-detection-system3.onrender.com/download-pdf",
         result,
         {
-          responseType: "blob"
-        }
-      );
+    responseType: "blob",
+  }
+);
 
-      const fileURL = window.URL.createObjectURL(
-        new Blob([response.data])
-      );
+const fileURL = window.URL.createObjectURL(
+  new Blob([pdfResponse.data])
+);
 
       const link = document.createElement("a");
 

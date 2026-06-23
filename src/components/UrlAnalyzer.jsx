@@ -123,14 +123,13 @@ function UrlAnalyzer() {
       <button
   className="download-btn"
   onClick={async () => {
-
     const response = await axios.post(
-      "http://127.0.0.1:5000/download-pdf",
+      "https://ai-phishing-detection-system3.onrender.com/download-pdf",
       result,
       {
         responseType: "blob"
       }
-    );
+      );
 
     const fileURL = window.URL.createObjectURL(
       new Blob([response.data])
