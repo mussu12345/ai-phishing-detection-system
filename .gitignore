@@ -13,10 +13,6 @@ backend/services/__pycache__/
 # Reports
 *.pdf
 
-# Models
-*.pkl
-backend/saved_models/
-
 # Virtual Environment
 venv/
 .env
