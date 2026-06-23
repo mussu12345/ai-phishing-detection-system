@@ -13,7 +13,7 @@ function UrlAnalyzer() {
       setResult(null);
 
       const response = await axios.post(
-        "http://127.0.0.1:5000/analyze-url",
+        "https://ai-phishing-detection-system3.onrender.com/analyze-url",
         {
           url: url,
         }
