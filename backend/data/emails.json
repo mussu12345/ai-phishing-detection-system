@@ -1,0 +1,20 @@
+[
+  {
+    "email_id": "EMAIL001",
+    "sender": "hr@company.com",
+    "subject": "Interview Schedule",
+    "body": "Dear Candidate, your interview has been scheduled for Monday at 10 AM. Regards, HR Team"
+  },
+  {
+    "email_id": "EMAIL002",
+    "sender": "security-alert@fake-bank.com",
+    "subject": "Urgent Account Verification",
+    "body": "Urgent! Your account will be suspended. Click here immediately to verify your password and OTP."
+  },
+  {
+    "email_id": "EMAIL003",
+    "sender": "support@company.com",
+    "subject": "Service Notification",
+    "body": "Dear Customer, your service request has been successfully received. No action is required. Regards, Customer Support Team"
+  }
+]

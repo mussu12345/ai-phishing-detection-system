@@ -1,0 +1,50 @@
+{
+    "best_model": "Random Forest",
+    "best_f1_score": 0.9861,
+    "models": {
+        "Logistic Regression": {
+            "accuracy": 0.9798,
+            "precision": 0.9791,
+            "recall": 0.9822,
+            "f1_score": 0.9806,
+            "roc_auc": 0.9977,
+            "true_negative": 7739,
+            "false_positive": 180,
+            "false_negative": 153,
+            "true_positive": 8426
+        },
+        "Naive Bayes": {
+            "accuracy": 0.9541,
+            "precision": 0.9833,
+            "recall": 0.9275,
+            "f1_score": 0.9546,
+            "roc_auc": 0.9943,
+            "true_negative": 7784,
+            "false_positive": 135,
+            "false_negative": 622,
+            "true_positive": 7957
+        },
+        "SVM": {
+            "accuracy": 0.9838,
+            "precision": 0.9837,
+            "recall": 0.9851,
+            "f1_score": 0.9844,
+            "roc_auc": 0.9985,
+            "true_negative": 7779,
+            "false_positive": 140,
+            "false_negative": 128,
+            "true_positive": 8451
+        },
+        "Random Forest": {
+            "accuracy": 0.9855,
+            "precision": 0.9852,
+            "recall": 0.9869,
+            "f1_score": 0.9861,
+            "roc_auc": 0.9985,
+            "true_negative": 7792,
+            "false_positive": 127,
+            "false_negative": 112,
+            "true_positive": 8467
+        }
+    }
+}

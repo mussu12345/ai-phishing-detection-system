@@ -1,0 +1,333 @@
+/* =========================================================
+   EMAIL ML MODEL ANALYSIS
+   ========================================================= */
+
+.model-section {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.model-section-header {
+  margin-bottom: 20px;
+}
+
+.model-section-header h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f1f5f9;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.model-section-header h2 svg {
+  color: #00d9ff;
+}
+
+.model-section-header p {
+  margin: 7px 0 0;
+  color: #8fa3b8;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FOUR CARDS
+   ========================================================= */
+
+.model-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   MODEL CARD
+   ========================================================= */
+
+.model-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 360px;
+
+  padding: 18px 14px;
+
+  background: #101a2d;
+
+  border: 1px solid #263852;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.model-card:hover {
+  transform: translateY(-3px);
+  border-color: #00d9ff;
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.08);
+}
+
+
+/* =========================================================
+   MODEL ICON
+   ========================================================= */
+
+.model-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #17243a;
+
+  margin-bottom: 13px;
+}
+
+.model-icon svg {
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   MODEL NAME
+   ========================================================= */
+
+.model-card h3 {
+  margin: 0 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 18px;
+  line-height: 1.25;
+
+  min-height: 45px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.model-description {
+  margin: 0 0 15px;
+
+  color: #91a4b9;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  min-height: 72px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+
+.model-mini-metrics {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 8px;
+
+  margin-top: auto;
+}
+
+.model-mini-metrics > div {
+  background: #0c1627;
+
+  border: 1px solid #263852;
+
+  border-radius: 10px;
+
+  padding: 9px 6px;
+
+  text-align: center;
+
+  min-width: 0;
+}
+
+.model-mini-metrics span {
+  display: block;
+
+  color: #8296ac;
+
+  font-size: 10px;
+
+  margin-bottom: 5px;
+}
+
+.model-mini-metrics strong {
+  display: block;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   MODEL COLORS
+   ========================================================= */
+
+.model-blue {
+  border-color: #245a8a;
+}
+
+.model-blue .model-icon svg,
+.model-blue .model-mini-metrics strong {
+  color: #1da1ff;
+}
+
+
+.model-purple {
+  border-color: #6940a8;
+}
+
+.model-purple .model-icon svg,
+.model-purple .model-mini-metrics strong {
+  color: #a855f7;
+}
+
+
+.model-cyan {
+  border-color: #087c94;
+}
+
+.model-cyan .model-icon svg,
+.model-cyan .model-mini-metrics strong {
+  color: #00d9ff;
+}
+
+
+.model-green {
+  border-color: #16804b;
+}
+
+.model-green .model-icon svg,
+.model-green .model-mini-metrics strong {
+  color: #22d67a;
+}
+
+
+/* =========================================================
+   BEST MODEL
+   ========================================================= */
+
+.best-model-badge {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  padding: 5px 8px;
+
+  border-radius: 8px;
+
+  background: rgba(34, 214, 122, 0.12);
+
+  border: 1px solid rgba(34, 214, 122, 0.45);
+
+  color: #22d67a;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.model-green .model-icon {
+  margin-top: 30px;
+}
+
+
+/* =========================================================
+   VIEW ANALYSIS
+   ========================================================= */
+
+.model-click {
+  margin-top: 13px;
+
+  padding-top: 11px;
+
+  border-top: 1px solid #263852;
+
+  text-align: center;
+
+  color: #00d9ff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SELECTED CARD
+   ========================================================= */
+
+.model-card-selected {
+  border-color: #00d9ff !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 217, 255, 0.2),
+    0 10px 30px rgba(0, 217, 255, 0.08);
+}
+
+
+/* =========================================================
+   EXPANDED ANALYSIS
+   ========================================================= */
+
+.model-expanded {
+  margin-top: 18px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #263852;
+
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .model-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .model-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .model-card {
+    min-height: auto;
+  }
+}

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 import EmailAnalyzer from "../components/EmailAnalyzer";
 import UrlAnalyzer from "../components/UrlAnalyzer";
 import ScanHistory from "../components/ScanHistory";
 import ThreatChart from "../components/ThreatChart";
 import ThreatTrendChart from "../components/ThreatTrendChart";
+
 import { FaShieldAlt } from "react-icons/fa";
 
 function Dashboard() {
@@ -13,6 +15,10 @@ function Dashboard() {
     phishing_detected: 0,
     accuracy: 0,
   });
+
+  /* ============================================================
+     FETCH DASHBOARD STATISTICS
+     ============================================================ */
 
   const fetchStats = async () => {
     try {
@@ -26,6 +32,10 @@ function Dashboard() {
     }
   };
 
+  /* ============================================================
+     AUTO REFRESH STATISTICS
+     ============================================================ */
+
   useEffect(() => {
     fetchStats();
 
@@ -36,89 +46,151 @@ function Dashboard() {
     return () => clearInterval(interval);
   }, []);
 
+  /* ============================================================
+     DASHBOARD
+     ============================================================ */
+
   return (
     <div className="dashboard">
+
+      {/* ========================================================
+          MAIN HEADER
+          ======================================================== */}
+
       <div className="header">
-        <FaShieldAlt className="shield-icon" />
-        <div>
-          <h1>AI Phishing Detection System</h1>
-          <p>Real-Time Threat Intelligence & Risk Analysis</p>
+
+        <div className="header-content">
+
+          <div className="header-icon">
+            <FaShieldAlt />
+          </div>
+
+          <h1>
+            AI Phishing Detection System
+          </h1>
+
+          <p>
+            Real-Time Threat Intelligence &amp; Risk Analysis
+          </p>
+
         </div>
+
       </div>
+
+      {/* ========================================================
+          STATISTICS
+          ======================================================== */}
 
       <div className="stats">
-        <div className="stat-card">
-          <h3>Threats Analyzed</h3>
-          <span>{stats.threats_analyzed}</span>
-        </div>
 
         <div className="stat-card">
-          <h3>Phishing Detected</h3>
-          <span>{stats.phishing_detected}</span>
+
+          <h3>
+            Threats Analyzed
+          </h3>
+
+          <span>
+            {stats.threats_analyzed}
+          </span>
+
         </div>
 
+
         <div className="stat-card">
-          <h3>Detection Accuracy</h3>
-          <span>{stats.accuracy}%</span>
+
+          <h3>
+            Phishing Detected
+          </h3>
+
+          <span>
+            {stats.phishing_detected}
+          </span>
+
         </div>
+
+
+        <div className="stat-card">
+
+          <h3>
+            Detection Accuracy
+          </h3>
+
+          <span>
+            {stats.accuracy}%
+          </span>
+
+        </div>
+
       </div>
 
-      {/* Pie Chart */}
-      <ThreatChart stats={stats} />
+      {/* ========================================================
+          THREAT ANALYTICS
+          ======================================================== */}
 
-      {/* Bar Chart */}
+      <ThreatChart
+        stats={stats}
+      />
+
+      {/* ========================================================
+          THREAT TREND
+          ======================================================== */}
+
       <ThreatTrendChart />
 
+      {/* ========================================================
+          EMAIL + URL ANALYZERS
+          ======================================================== */}
+
       <div className="analyzer-grid">
+
         <EmailAnalyzer />
+
         <UrlAnalyzer />
+
       </div>
+
+      {/* ========================================================
+          SCAN HISTORY
+          ======================================================== */}
 
       <ScanHistory />
 
-      {/* Footer */}
-      {/* Professional Footer */}
-<div className="dashboard-footer">
-  <div className="footer-content">
+      {/* ========================================================
+          FOOTER
+          ======================================================== */}
 
-    <h3>AI Phishing Detection & Prevention System</h3>
+      <footer className="dashboard-footer">
 
-    <p className="footer-tagline">
-      Securing Digital Communication Through Artificial Intelligence & Machine Learning
-    </p>
+        <div className="footer-content">
 
-    <div className="footer-info">
+          <h3>
+            AI Phishing Detection &amp; Prevention System
+          </h3>
 
-      <div className="footer-item">
-        <span className="footer-label">Developer</span>
-        <span className="footer-value">Muskan Mubarak</span>
-      </div>
+          <p className="footer-tagline">
+            Securing Digital Communication Through
+            Artificial Intelligence &amp; Machine Learning
+          </p>
 
-      <div className="footer-item">
-        <span className="footer-label">Email</span>
-        <span className="footer-value">
-          muskanmubarak19@gmail.com
-        </span>
-      </div>
 
-      <div className="footer-item">
-        <span className="footer-label">Contact</span>
-        <span className="footer-value">
-          +91 123456789
-        </span>
-      </div>
+          <div className="footer-info">
 
-    </div>
+          </div>
 
-    <div className="footer-divider"></div>
 
-    <p className="footer-copy">
-      © 2026 AI Phishing Detection System | Built with React, Flask,
-      Machine Learning, Cybersecurity Analytics & Real-Time Threat Monitoring
-    </p>
+          <div className="footer-divider"></div>
 
-  </div>
-</div>
+
+          <p className="footer-copy">
+            © 2026 AI Phishing Detection System | Built with
+            React, Flask, Machine Learning, Cybersecurity
+            Analytics &amp; Real-Time Threat Monitoring
+          </p>
+
+        </div>
+
+      </footer>
+
     </div>
   );
 }
